@@ -1,31 +1,25 @@
-package com.bolaandroid.ravewalletdemo
+package com.bolaandroid.ravewalletdemo.view
 
 import android.app.Dialog
-import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.databinding.DataBindingUtil
-import android.databinding.ViewDataBinding
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import com.bolaandroid.ravewalletdemo.databinding.ActivityMainBinding
-import android.databinding.adapters.TextViewBindingAdapter.setText
 import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.widget.EditText
-import android.view.LayoutInflater
 import android.view.View
 import android.widget.Toast
+import com.bolaandroid.ravewalletdemo.viewmodels.MainActivityViewModel
+import com.bolaandroid.ravewalletdemo.R
 import com.bolaandroid.ravewalletdemo.Utils.Utils
-import com.bolaandroid.ravewalletdemo.Utils.Utils.Companion.getEmail
-import com.bolaandroid.ravewalletdemo.Utils.Utils.Companion.getLastName
 import com.bolaandroid.ravewalletdemo.Utils.Utils.Companion.isvalid
 import com.flutterwave.raveandroid.RaveConstants
 import com.flutterwave.raveandroid.RavePayActivity
-import com.flutterwave.raveandroid.RavePayManager
 //import com.flutterwave.raveandroid.Utils
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.name_requesting_dialog.*
 
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     val TAG = "MainActivity"
@@ -33,7 +27,7 @@ class MainActivity : AppCompatActivity(),View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this,R.layout.activity_main)
+        val binding = DataBindingUtil.setContentView<ActivityMainBinding>(this, R.layout.activity_main)
         binding.viewmodel = viewModel
         viewModel.onCreate()
         if (com.bolaandroid.ravewalletdemo.Utils.Utils.isUserFirstTimer()){

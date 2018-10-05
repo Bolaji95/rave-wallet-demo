@@ -1,4 +1,4 @@
-package com.bolaandroid.ravewalletdemo
+package com.bolaandroid.ravewalletdemo.model
 
 /**
  * Created by Owner on 10/4/2018.

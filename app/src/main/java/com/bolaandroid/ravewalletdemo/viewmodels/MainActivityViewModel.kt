@@ -1,17 +1,17 @@
-package com.bolaandroid.ravewalletdemo
+package com.bolaandroid.ravewalletdemo.viewmodels
 
 import android.app.Activity
 import android.databinding.ObservableField
 import com.bolaandroid.ravewalletdemo.Utils.Utils
+import com.bolaandroid.ravewalletdemo.model.User
 import com.flutterwave.raveandroid.RavePayManager
-import okhttp3.internal.Util
 import java.text.DecimalFormat
 
 /**
  * Created by Owner on 10/4/2018.
  */
 
-class MainActivityViewModel : ViewModel{
+class MainActivityViewModel : ViewModel {
     var welcomeText = ObservableField<String>()
     var totalTransaction = ObservableField<String>()
     var user : User? = null
@@ -19,14 +19,14 @@ class MainActivityViewModel : ViewModel{
 
     fun setUser(firstName:String,lastName:String,email:String,totalAmountDeposited:String){
         val initialDeposit : Double = 0.00
-        user = User(firstName,initialDeposit)
+        user = User(firstName, initialDeposit)
         welcomeText.set("Welcome, $firstName")
         setAmount(initialDeposit)
         Utils.saveUserNameToPrefs(firstName = firstName,lastName = lastName,email = email,totalAmountDeposited=totalAmountDeposited)
     }
 
     fun setUser(firstName:String,totalDeposited:Double){
-        user = User(firstName,totalDeposited)
+        user = User(firstName, totalDeposited)
         welcomeText.set("Welcome, $firstName")
         setAmount(totalDeposited)
     }

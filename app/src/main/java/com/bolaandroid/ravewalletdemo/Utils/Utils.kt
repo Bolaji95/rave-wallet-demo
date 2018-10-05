@@ -3,9 +3,8 @@ package com.bolaandroid.ravewalletdemo.Utils
 import android.content.Context
 import android.content.SharedPreferences
 import android.widget.EditText
-import com.bolaandroid.ravewalletdemo.Constants
+import com.bolaandroid.ravewalletdemo.Constants.Constants
 import com.bolaandroid.ravewalletdemo.Context.App
-import java.util.*
 
 /**
  * Created by Owner on 10/4/2018.

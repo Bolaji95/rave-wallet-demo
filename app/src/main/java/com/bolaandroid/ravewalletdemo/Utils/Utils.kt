@@ -82,7 +82,7 @@ class Utils{
             var sharedPreferences : SharedPreferences = context.getSharedPreferences(Constants.userInfo().USER_INFO,Context.MODE_PRIVATE)
             var editor:android.content.SharedPreferences.Editor = sharedPreferences.edit()
             editor.putString(Constants.userInfo().USER_TOTAL_DEPOSITED,totalAmountDeposited)
-            editor.apply(
+            editor.apply()
         }
 
 

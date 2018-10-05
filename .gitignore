@@ -8,6 +8,7 @@
 /captures
 .externalNativeBuild
 bin/
+.idea/
 gen/
 out/
 *.dex
